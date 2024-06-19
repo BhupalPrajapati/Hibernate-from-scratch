@@ -1,0 +1,34 @@
+package com.hiber;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        
+        // sessionfactory is a interface, that's why we can't used the new(it is use for the creating the object of the sessionfactory)
+        
+       SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+       
+        System.out.println(factory); // it is give the config with some random object
+        System.out.println(factory.isClosed());  // it gives the true/false acco to ur factory closed or not.
+        
+        // Now we can used above factory object easily in anywhere in the project.\
+        
+        // creating student
+        
+        Student st = new Student();   // creating of the student
+        st.setId(100);
+        st.setCity("Pune");
+        st.setName("Bhupal");
+        
+        
+    }
+}

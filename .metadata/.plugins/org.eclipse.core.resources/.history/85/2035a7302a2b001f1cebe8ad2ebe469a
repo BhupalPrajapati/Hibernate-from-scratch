@@ -1,0 +1,62 @@
+package com.annotations;
+
+import java.util.Date;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+import com.hiber.Student;
+
+/**
+ * Hello world!
+ *
+ */
+public class App 
+{
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+        
+        
+        SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+        
+        System.out.println(factory);
+        
+        Student st = new Student();   // creating of the student
+        st.setId(50);
+        st.setCity("Mumbai");
+        st.setName("John");
+        
+       System.out.println(st);
+        
+        // creating object of te address
+        
+        Address ad = new Address();
+        ad.setAddressid(50);
+        ad.setCity("Banglore");
+        ad.setStreet("Chock");
+        ad.setOpen(true);
+        ad.setX(0.3);
+        ad.setImage(null);
+        ad.setAddedDate(new Date());
+        
+        System.out.println(ad);
+        
+        
+        Session session = factory.getCurrentSession();    // after opening 1st session also called getCurrentSesssion() method
+        
+        Transaction tx=session.beginTransaction(); // here the transction begins with the help of the beginTracsctiotn
+        
+        session.save(st);     // data are saved
+        
+        session.save(ad);    // save ad object 
+        
+        tx.commit();    // for the physicall changes you need to commit , so here session is commit with the help of the getTranaction method
+        
+        
+        session.close(); 
+        
+    }
+}

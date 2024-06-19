@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC 
+    "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+
+		<!-- Using the URL for the connection -->
+		<property name="connection.url">
+			jdbc:mysql://localhost:3306/myhiber
+		</property>
+
+
+		<property name="hibernate.connection.username">root</property>
+		<property name="hibernate.connection.password">Bhupal@12345</property>
+
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		
+		<!-- If we used the create then he create table from scretch if any table exit then it delete and create new one.  -->
+		  <property name="hibernate.hbm2ddl.auto">create</property> 
+		
+		
+		<!-- when we use the update, the again table is not created if the table is already exited in the database -->
+		<!--  <property name="hibernate.hbm2ddl.auto">update</property>  -->
+		
+		<property name="hibernate.show_sql">true</property>
+
+		<!-- here we define the fully qualified class name -->
+
+		<mapping class="com.annotations.Student" />
+		<mapping class = "com.annotations.Address"/>
+	</session-factory>
+</hibernate-configuration>

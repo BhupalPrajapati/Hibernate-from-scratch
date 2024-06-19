@@ -1,0 +1,8 @@
+package com.annotations;
+
+public class EmbeddedOb {
+	public static void main(String[] args) {
+		
+	}
+
+}

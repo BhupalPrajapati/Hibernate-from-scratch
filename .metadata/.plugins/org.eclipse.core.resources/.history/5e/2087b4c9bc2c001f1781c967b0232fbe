@@ -1,0 +1,66 @@
+package com.annotations;
+
+public class Certificate {
+	private String course;
+	private String duration;
+
+	// Getter and Setter for the both field
+
+	public String getCourse() {
+		return course;
+	}
+
+
+	public void setCourse(String course) {
+		this.course = course;
+	}
+
+
+	public String getDuration() {
+		return duration;
+	}
+
+
+	public void setDuration(String duration) {
+		this.duration = duration;
+	}
+
+	
+	// Generate No argument constructor bcz it is used for clear code and
+	// serialization( any Java application, classes that may be serialized (e.g.,
+	// entities, DTOs) often need a no-argument constructor)
+
+	public Certificate() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	
+	// Here we define the toString() method(The custom implementation of the
+	// toString() method returns a string that includes the class name (Certificate)
+	// and the values of its fields (Course and Duration). This provides a more
+	// meaningful and human-readable representation of the object than the default
+	// implementation.)
+
+	
+
+
+	@Override
+	public String toString() {
+		return "Certificate [course=" + course + ", duration=" + duration + "]";
+	}
+
+
+
+
+	
+	// Here we define constructor by using it's filed like course and it durations
+	
+public Certificate(String course, String duration) {
+	super();
+	this.course = course;
+	this.duration = duration;
+
+}
+	
+}

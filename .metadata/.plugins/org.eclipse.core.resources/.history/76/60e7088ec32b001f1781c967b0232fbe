@@ -1,0 +1,30 @@
+package com.annotations;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class FetchObj {
+	public static void main(String[] args) {
+		
+		// creating session factory
+		
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+		
+		
+		// now open the Session
+		
+		Session session = factory.openSession();
+		
+		// in this no need tranaction bcz won't save the data in the database
+		
+		// here we call the get() method
+		Student student = (Student)session.load(Student.class, 61);
+		
+		System.out.println(student); // after call student obj then the Student string is call and details are print
+				
+		session.close();
+		factory.close();
+	}
+
+}

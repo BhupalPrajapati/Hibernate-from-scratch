@@ -1,0 +1,11 @@
+package com.hiber;
+
+public class Student {
+	private int id;
+	private String Name;
+	private String City;
+	
+	
+	// for the data initials you need to create constructor. 
+
+}

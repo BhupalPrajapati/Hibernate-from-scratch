@@ -1,0 +1,52 @@
+package com.hiber;
+
+public class Student {
+	private int id;
+	private String Name;
+	private String City;
+
+	// for the data initials you need to create constructor.
+	public Student(int id, String name, String city) {
+		super();
+		this.id = id;
+		Name = name;
+		City = city;
+	}
+
+	// also make a default constructor to initialise the instance variable of an
+	// object to their default values
+	public Student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	// Making the getter and setter for that to SET the data and for GET the data 
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+	public String getCity() {
+		return City;
+	}
+
+	public void setCity(String city) {
+		City = city;
+	}
+	
+	
+
+}

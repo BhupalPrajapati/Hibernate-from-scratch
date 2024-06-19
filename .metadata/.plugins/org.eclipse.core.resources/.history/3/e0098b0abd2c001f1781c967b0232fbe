@@ -1,0 +1,31 @@
+package com.annotations;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.cfg.Configuration;
+
+public class EmbeddedOb {
+	public static void main(String[] args) {
+		// creating session factory
+
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+		
+		// creating student object
+		
+		Student student1 = new Student();
+		student1.setName("Bhupal");
+		student1.setId(10);
+		student1.setCity("Pune");
+		
+		// new creating the object of the Certificate bcz it has two attribute(course nd duration). 
+		
+		Certificate certificate = new Certificate();
+		certificate.setCourse("Rust");
+		certificate.setDuration("1 month");
+		
+		student1.setCert(certificate);
+		
+		factory.close();
+
+	}
+
+}

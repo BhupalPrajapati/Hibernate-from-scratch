@@ -1,0 +1,13 @@
+package com.annotations;
+
+import org.hibernate.SessionFactory;
+
+public class FetchObj {
+	public static void main(String[] args) {
+		
+		// creating session factory
+		
+		
+	}
+
+}

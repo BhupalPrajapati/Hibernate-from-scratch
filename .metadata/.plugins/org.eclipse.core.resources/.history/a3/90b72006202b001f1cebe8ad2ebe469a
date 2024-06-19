@@ -1,0 +1,14 @@
+package com.annotations;
+
+import java.util.Date;
+
+public class Address {
+     private int addressid;
+     private String street;
+     private String city;
+     private boolean isOpen;
+     private double x;
+     private Date addedDate;
+     private byte[] image;
+     
+}
