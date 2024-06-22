@@ -1,0 +1,13 @@
+package com.mapping;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
+public class Question {
+	@Id
+	@Column(name = "question_Id")
+	private int questionId;
+	private String question;
+}

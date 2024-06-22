@@ -30,6 +30,15 @@
 		<!-- here we define the fully qualified class name -->
 
 		<mapping class="com.annotations.Student" />
+		
 		<mapping class = "com.annotations.Address"/>
+		
+		<!-- it is for the OneToMany and ManyToOne Mapping -->
+		<mapping class = "com.mapping.Question"/>
+		<mapping class = "com.mapping.Answer"/>
+		
+		<!-- it is for the ManyToMany Mapping -->
+		<mapping class = "com.mappingManyToMany.Employee"/>
+		<mapping class = "com.mappingManyToMany.Project"/>
 	</session-factory>
 </hibernate-configuration>

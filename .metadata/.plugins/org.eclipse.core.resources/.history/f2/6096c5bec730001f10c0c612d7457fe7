@@ -1,0 +1,66 @@
+package com.mappingManyToMany;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Here to we practicse the ManyToMany Mapping");
+
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+
+		// here we atleast require the two employee and project to do the ManyToMany
+		// Relationship
+
+		// so first creating the employee
+		Employee e1 = new Employee();
+		Employee e2 = new Employee();
+		Employee e3 = new Employee();
+
+		e1.setEid(12);
+		e1.setEname("Ram");
+
+		e2.setEid(13);
+		e2.setEname("shaym");
+
+		e3.setEid(123);
+		e3.setEname("sundar");
+
+		// Now creating the projet
+
+		Project p1 = new Project();
+		Project p2 = new Project();
+		Project p3 = new Project();
+
+		p1.setPid(2);
+		p1.setPname("Library Management System");
+
+		p2.setPid(3);
+		p2.setPname("Chatbot");
+
+		p3.setPid(13);
+		p3.setPname("Ecom Website");
+		
+		
+		// creating the list of project and employee for the stroing the data of the both employee and project
+		
+		List<Employee> empList = new ArrayList<Employee>();
+		List<Project> proList = new ArrayList<Project>();
+		
+
+		Session session = factory.openSession();
+
+		// Transaction begins
+		Transaction tx = session.beginTransaction();
+
+		tx.commit();
+
+		factory.close();
+		session.close();
+	}
+}

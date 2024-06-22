@@ -1,0 +1,10 @@
+package com.mappingManyToMany;
+
+import jakarta.persistence.Column;
+
+public class Project {
+	private int pid;
+	@Column(name = "Project_Name")
+	private String pname;
+
+}

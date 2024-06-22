@@ -1,0 +1,11 @@
+package com.mappingManyToMany;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Id;
+
+public class Employee {
+	@Id
+	@Column(name = "E_Id")
+	private int eid;
+	private String ename;
+}

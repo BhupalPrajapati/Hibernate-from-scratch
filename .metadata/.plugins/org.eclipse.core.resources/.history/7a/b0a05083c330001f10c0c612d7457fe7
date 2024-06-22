@@ -1,0 +1,20 @@
+package com.mappingManyToMany;
+
+import java.util.List;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToMany;
+
+@Entity
+public class Employee {
+	@Id
+	@Column(name = "E_Id")
+	private int eid;
+	private String ename;
+	
+	// here we do ManyToMany mapping, so for that we can we can use List either Set 
+	@ManyToMany
+	private List<Project> projects;
+}

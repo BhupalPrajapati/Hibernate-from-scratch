@@ -1,0 +1,27 @@
+package com.mapping;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Main {
+	public static void main(String[] args) {
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+		Session session = factory.openSession();
+
+		// Transaction begins
+		Transaction tx = session.beginTransaction();
+		
+		session.save();
+		
+		
+		
+		// commit the transaction
+		tx.commit();
+		
+		
+		factory.close();
+		session.close();
+	}
+}

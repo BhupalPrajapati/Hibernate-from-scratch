@@ -1,0 +1,27 @@
+package com.mappingManyToMany;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+public class Main {
+	public static void main(String[] args) {
+		System.out.println("Here to we practicse the ManyToMany Mapping");
+
+		SessionFactory factory = new Configuration().configure("hibernate.cfg.xml").buildSessionFactory();
+		
+		
+		
+		
+		Session session = factory.openSession();
+
+		// Transaction begins
+		Transaction tx = session.beginTransaction();\
+		
+		tx.commit();
+
+		factory.close();
+		session.close();
+	}
+}

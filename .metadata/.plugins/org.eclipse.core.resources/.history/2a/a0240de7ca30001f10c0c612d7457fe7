@@ -1,0 +1,65 @@
+package com.mappingManyToMany;
+
+import java.util.List;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+
+@Entity
+public class Employee {
+	@Id
+	@Column(name = "E_Id")
+	private int eid;
+	private String ename;
+
+	// here we do ManyToMany mapping, so for that we can we can use List either Set
+	// One employee can have many project
+	@ManyToMany
+	@JoinTable(name = "Emp_proj")
+	private List<Project> projects;
+
+	// Getter and Setter(ManyToMany Mapping)
+
+	public int getEid() {
+		return eid;
+	}
+
+	public void setEid(int eid) {
+		this.eid = eid;
+	}
+
+	public String getEname() {
+		return ename;
+	}
+
+	public void setEname(String ename) {
+		this.ename = ename;
+	}
+
+	public List<Project> getProjects() {
+		return projects;
+	}
+
+	public void setProjects(List<Project> projects) {
+		this.projects = projects;
+	}
+
+	// constrctor using file
+	public Employee(int eid, String ename, List<Project> projects) {
+		super();
+		this.eid = eid;
+		this.ename = ename;
+		this.projects = projects;
+	}
+
+	// Defaul Constructor
+
+	public Employee() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}
