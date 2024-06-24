@@ -18,8 +18,11 @@
 
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		
+		<!-- to the sql query in the output -->
+		<property name="format_sql">true</property>
+		
 		<!-- If we used the create then he create table from scretch if any table exit then it delete and create new one.  -->
-		  <property name="hibernate.hbm2ddl.auto">create</property> 
+		  <property name="hibernate.hbm2ddl.auto">update</property> 
 		
 		
 		<!-- when we use the update, the again table is not created if the table is already exited in the database -->

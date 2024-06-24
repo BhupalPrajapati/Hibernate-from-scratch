@@ -4,6 +4,7 @@ import java.util.List;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
@@ -17,16 +18,14 @@ public class Question {
 	private int questionId;
 	private String question;
 
-	
-          // take variable for the answer (one to one reationship)
+	// take variable for the answer (one to one reationship)
 //	@OneToOne
 //	private Answer answer;
-	
-	
-	        // OneToMany Relationship 
-	@OneToMany(mappedBy = "question")
+
+	// OneToMany Relationship
+	@OneToMany(mappedBy = "question", fetch = FetchType.EAGER) // here i am using the fecth type is Eager, which is used
+																// to load the data
 	private List<Answer> answers;
-	
 
 	public int getQuestionId() {
 		return questionId;
@@ -57,7 +56,6 @@ public class Question {
 		this.question = question;
 	}
 
-	
 	public Question() {
 		super();
 		// TODO Auto-generated constructor stub

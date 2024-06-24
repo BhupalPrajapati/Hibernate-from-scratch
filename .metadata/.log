@@ -7608,3 +7608,56 @@ java.lang.InterruptedException
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2024-06-23 00:29:14.327
 !MESSAGE The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33
+
+!ENTRY com.genuitec.eclipse.theming.ui 4 0 2024-06-24 21:34:34.435
+!MESSAGE www.genuitec.com
+!STACK 0
+java.net.UnknownHostException: www.genuitec.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:567)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:333)
+	at java.base/java.net.Socket.connect(Socket.java:648)
+	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:290)
+	at java.base/sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:173)
+	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:182)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:474)
+	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:569)
+	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:265)
+	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:372)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:189)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:1194)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:1082)
+	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:175)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1600)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1528)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:527)
+	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getResponseCode(HttpsURLConnectionImpl.java:308)
+	at com.genuitec.eclipse.theming.ui.IconDownloaderJob.getApprovedDefinitions(IconDownloaderJob.java:86)
+	at com.genuitec.eclipse.theming.ui.IconDownloaderJob.run(IconDownloaderJob.java:52)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:63)
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-06-24 23:51:17.769
+!MESSAGE The artifact org.hibernate:hibernate-core:jar:6.2.11.Final has been relocated to org.hibernate.orm:hibernate-core:jar:6.2.11.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-06-24 23:51:17.778
+!MESSAGE The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-06-24 23:51:18.113
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-06-24 23:51:18.117
+!MESSAGE classpath=23 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-06-24 23:51:18.130
+!MESSAGE buffering callback sts4.classpath.SAoogXqP AllAnotations false 23
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-06-24 23:51:18.131
+!MESSAGE executing callback sts4.classpath.SAoogXqP 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2024-06-24 23:51:18.218
+!MESSAGE executing callback sts4.classpath.SAoogXqP SUCCESS [done]
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-06-24 23:51:18.649
+!MESSAGE The artifact org.hibernate:hibernate-core:jar:6.2.11.Final has been relocated to org.hibernate.orm:hibernate-core:jar:6.2.11.Final
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2024-06-24 23:51:18.650
+!MESSAGE The artifact mysql:mysql-connector-java:jar:8.0.33 has been relocated to com.mysql:mysql-connector-j:jar:8.0.33

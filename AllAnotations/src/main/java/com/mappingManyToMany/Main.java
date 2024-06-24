@@ -8,6 +8,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
+import com.mapping.Question;
+
 public class Main {
 	public static void main(String[] args) {
 		System.out.println("Here to we practicse the ManyToMany Mapping");
@@ -84,6 +86,10 @@ public class Main {
 		session.save(p1);
 		session.save(p2);
 		session.save(p3);
+		
+		
+		// Lazy Fetching/Loading
+//		 Question q = session.get(Question.class, tx)
 
 		tx.commit();
 

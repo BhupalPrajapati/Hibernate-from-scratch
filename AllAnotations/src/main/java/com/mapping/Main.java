@@ -36,18 +36,17 @@ public class Main {
 		ans2.setAnswerId(345);
 		ans2.setAnswer("Java is most popular and trusted lanauge");
 		ans.setQuestion(q1);
-		
+
 		// here we are create list of answer(OneToMany relationship)
-		
-		List<Answer>list = new ArrayList<Answer>();
+
+		List<Answer> list = new ArrayList<Answer>();
 		list.add(ans);
 		list.add(ans1);
 		list.add(ans2);
-		
+
 		// here we pass list of answer in the question(OneToMany relationship)
 		q1.setAnswers(list);
 
-		
 		// save question with answer(OneToOne Relationship)
 //		q1.setAnswer(ans);
 
@@ -85,8 +84,8 @@ public class Main {
 
 		// Transaction begins
 		Transaction tx = session.beginTransaction();
-        // save the question in session(OneToOne and OneToMany relationship)
-		session.save(q1);
+		// save the question in session(OneToOne and OneToMany relationship)
+//		session.save(q1);
 
 		// (OneToOne Mapping)
 //		session.save(q2);
@@ -99,21 +98,35 @@ public class Main {
 //		session.save(ans2);
 
 		// Saving the answer in the session(OneToMany Relationship)
-		session.save(ans);
-		session.save(ans1);
-		session.save(ans2);
-		
-		
+//		session.save(ans);
+//		session.save(ans1);
+//		session.save(ans2);
+
 		// Fetching the data from the table(OneToMany Relationship)
-		Question q = (Question)session.get(Question.class, 1212);  // pritning the question
-		System.out.println(q.getQuestion());
-		
-		// fetching the all the answer from the table and print here(OneToMany Relation mapping)
-		for(Answer a:q.getAnswers()) {
-			System.out.println(a.getAnswer());
-		}
-		
-		
+//		Question q = (Question)session.get(Question.class, 1212);  // pritning the question
+//		System.out.println(q.getQuestion());
+
+		// fetching the all the answer from the table and print here(OneToMany Relation
+		// mapping)
+//		for(Answer a:q.getAnswers()) {
+//			System.out.println(a.getAnswer());
+//		}
+
+		// here we are also work with the fetching technique in the hibernate
+
+		// Lazy loading+Eager Loading // facthing
+
+		Question q = (Question) session.get(Question.class, 1212);
+		System.out.println(q.getQuestionId());
+		System.out.println(q.getQuestion()); // if i write fecthtype in the question as a Eager type, then it is
+												// automatically load the answer without the explicity call the get size
+												// method()
+
+		// if we call size method the query is only hit the answer, that's why it is
+		// called Lazy loading
+		// Lazy loading
+		System.out.println(q.getAnswers().size());
+
 		// commit the transaction
 		tx.commit();
 
